@@ -1,20 +1,18 @@
 /// <reference types="vite/client" />
 
+export interface AppVersions {
+  node: string;
+  browser: string;
+  electron: string;
+}
+
 export interface User {
   username: string;
 }
 
-export interface Api {
-  versions: {
-    node: string;
-    browser: string;
-    electron: string;
-  };
-  user: User;
-}
-
 declare global {
   interface Window {
-    api: Api;
+    versions: AppVersions;
+    user: User;
   }
 }

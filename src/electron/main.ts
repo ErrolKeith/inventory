@@ -13,9 +13,7 @@ function main() {
       },
     });
 
-    process.env.DEV
-      ? win.loadURL("http://localhost:5173")
-      : win.loadFile("./dist/ui/index.html");
+    win.loadFile("./dist/ui/index.html");
   };
 
   app.whenReady().then(() => {

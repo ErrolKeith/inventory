@@ -1032,7 +1032,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esbuild@npm:^0.25.0":
+"esbuild@npm:^0.25.0, esbuild@npm:^0.25.3":
   version: 0.25.3
   resolution: "esbuild@npm:0.25.3"
   dependencies:
@@ -1386,6 +1386,7 @@ __metadata:
     "@vitejs/plugin-vue": "npm:^5.2.2"
     "@vue/tsconfig": "npm:^0.7.0"
     electron: "npm:^35.2.1"
+    esbuild: "npm:^0.25.3"
     typescript: "npm:~5.7.2"
     vite: "npm:^6.3.1"
     vue: "npm:^3.5.13"

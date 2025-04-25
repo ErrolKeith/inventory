@@ -1,7 +1,11 @@
 <script setup lang="ts"></script>
 
 <template>
-  <h1>VUE</h1>
+  <div>
+    <h1>VUE</h1>
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+
+</style>
