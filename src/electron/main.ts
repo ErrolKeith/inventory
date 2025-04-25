@@ -13,7 +13,6 @@ function main() {
       },
     });
 
-    win.setTitle(`Inventory Manager`);
     win.loadFile("./dist/ui/index.html");
   };
 

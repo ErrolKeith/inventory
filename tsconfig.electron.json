@@ -2,7 +2,7 @@
   "compilerOptions": {
     "module": "CommonJS",
     "outDir": "dist",
-    "noEmit": false
+    "noEmit": true
   },
   "include": ["src/electron/**/*.ts"]
 }
