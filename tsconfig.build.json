@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS",
+    "outDir": "dist",
+    "noEmit": false
+  },
+  "include": ["src/electron/**/*.ts"]
+}
