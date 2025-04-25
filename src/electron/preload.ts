@@ -1,6 +1,5 @@
-import { Api, User } from "./globals";
-
-const { contextBridge } = require("electron");
+import type { Api, User } from "./globals";
+import { contextBridge } from "electron";
 
 class InMainExposedContextBuilder {
   private nodeVersion: string;
