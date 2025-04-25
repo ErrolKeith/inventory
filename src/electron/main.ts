@@ -4,6 +4,7 @@ import { join } from "path";
 let win: BrowserWindow;
 
 function main() {
+  const isDev = process.env.NODE_ENV === "DEV";
   const createWindow = () => {
     win = new BrowserWindow({
       width: 1200,
@@ -13,7 +14,9 @@ function main() {
       },
     });
 
-    win.loadFile("./dist/ui/index.html");
+    isDev
+      ? win.loadURL("http://localhost:5173")
+      : win.loadFile("./dist/ui/index.html");
   };
 
   app.whenReady().then(() => {
