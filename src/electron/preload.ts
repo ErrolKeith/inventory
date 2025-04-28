@@ -1,22 +1,29 @@
 import { contextBridge } from "electron";
+import seedMaterials from "./db/seedMaterials.json";
 
-const mainWorldContextChannels = [
-  {
-    key: "versions",
-    context: {
-      node: process.versions.node,
-      browser: process.versions.chrome,
-      electron: process.versions.electron,
+const mainWorldVersionChannel = {
+  key: "versions",
+  exposed: {
+    node: process.versions.node,
+    browser: process.versions.chrome,
+    electron: process.versions.electron,
+  },
+};
+
+const mainWorldMaterialsChannel = {
+  key: "api",
+  exposed: {
+    searchMaterials: () => {
+      return seedMaterials;
     },
   },
-  {
-    key: "user",
-    context: {
-      username: process.env["LOGNAME"] ?? process.env["USER"] ?? "Guest",
-    },
-  },
+};
+
+const mainWorldExposedChannels = [
+  mainWorldVersionChannel,
+  mainWorldMaterialsChannel,
 ];
 
-mainWorldContextChannels.forEach((channel) => {
-  contextBridge.exposeInMainWorld(channel.key, channel.context);
+mainWorldExposedChannels.forEach((channel) => {
+  contextBridge.exposeInMainWorld(channel.key, channel.exposed);
 });
