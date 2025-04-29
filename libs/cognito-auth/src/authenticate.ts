@@ -25,7 +25,7 @@ export async function authenticateWithAwsCognito(
   password: string,
   clientId: string,
   clientSecret: string,
-  region: string = "us-east-1"
+  region: string
 ) {
   const client = new CognitoIdentityProviderClient({
     region,
