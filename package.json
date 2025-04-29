@@ -1,31 +1,25 @@
 {
-  "name": "inventory-manager",
   "private": true,
-  "version": "0.0.0",
-  "main": "dist/main.js",
+  "workspaces": [
+    "apps/*",
+    "libs/*"
+  ],
   "scripts": {
-    "dev": "yarn build && concurrently \"vite\" \"cross-env NODE_ENV=DEV yarn electron .\"",
-    "build": "vue-tsc -b && vite build && esbuild ./src/electron/main.ts ./src/electron/preload.ts --external:electron --bundle --platform=node --outdir=dist",
-    "preview": "vite preview"
+    "build": "yarn turbo build",
+    "typecheck": "yarn vue-tsc --build"
   },
   "dependencies": {
-    "vue": "^3.5.13",
-    "vue-router": "^4.5.1"
+    "@types/node": "^22.15.3",
+    "turbo": "^2.5.2",
+    "typescript": "^5.8.3",
+    "vue-tsc": "^2.2.10"
   },
-  "devDependencies": {
-    "@vitejs/plugin-vue": "^5.2.2",
-    "@vue/tsconfig": "^0.7.0",
-    "concurrently": "^9.1.2",
-    "cross-env": "^7.0.3",
-    "electron": "^35.2.1",
-    "esbuild": "^0.25.3",
-    "typescript": "~5.7.2",
-    "vite": "^6.3.1",
-    "vue-tsc": "^2.2.8"
-  },
-  "packageManager": "yarn@4.7.0",
+  "packageManager": "yarn@4.9.1",
   "volta": {
     "node": "22.0.0",
-    "yarn": "4.7.0"
+    "yarn": "4.9.1"
+  },
+  "engines": {
+    "node": "22.0.0"
   }
 }

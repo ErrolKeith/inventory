@@ -26,3 +26,5 @@ dist-ssr
 dist
 node_modules
 install-state.gz
+.turbo
+.env

@@ -1,0 +1,12 @@
+{
+  "extends": "../tsconfig.base.json",
+  "include": [
+    "./*/src/**/*.ts",
+    "./*/src/**/*.json",
+    "./*/src/**/*.vue",
+  ],
+  "exclude": ["node_modules"],
+  "references": [
+    { "path": "../libs/tsconfig.json" },
+  ]
+}

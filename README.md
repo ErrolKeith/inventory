@@ -1,10 +1,8 @@
+# inventory-manager
 
-## Development
+## Setup (No TF for this one...will lock down portfolio accunt)
 
-From the root: 
+### Requirements
 
-Requires volta and yarn.
-
-1. `yarn install`.
-2. `yarn build`.
-3. `yarn electron .`.
+- [Volta.sh](https://volta.sh/)
+- [`yarn`](https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable)
