@@ -1,4 +1,5 @@
 import { createApp } from "vue";
+import { router } from "./router";
 import App from "./App.vue";
 
 import "./style.css";
@@ -8,5 +9,5 @@ window.addEventListener("DOMContentLoaded", () => {
   if (!mountEl) {
     throw Error("Mount element missing");
   }
-  createApp(App).mount(mountEl);
+  createApp(App).use(router).mount(mountEl);
 });

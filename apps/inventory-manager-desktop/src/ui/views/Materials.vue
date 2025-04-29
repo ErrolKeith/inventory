@@ -14,11 +14,10 @@
     </div>
   </div>
 </template>
-
 <script setup lang="ts">
-import type { Material } from "./types";
+import type { Material } from "../types";
 import { ref } from "vue";
-import useApi from "./composables/useApi";
+import useApi from "../composables/useApi";
 
 const { searchMaterials } = useApi();
 const materials = ref<Material[]>(searchMaterials());

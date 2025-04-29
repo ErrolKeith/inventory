@@ -1,9 +1,3 @@
-export interface AppVersions {
-  node: string;
-  browser: string;
-  electron: string;
-}
-
 export type BaseMaterial = "ingredient";
 export type MaterialType =
   | BaseMaterial
@@ -20,16 +14,28 @@ export interface Material {
   consumptionUnit: MaterialQuantityUnit;
 }
 
-export interface Api {
-  searchMaterials: () => Material[];
+export interface ApiChannel {
+  key: "api";
+  exposed: {
+    searchMaterials: () => Material[];
+  };
+}
+
+export interface AuthChannel {
+  key: "auth";
+  exposed: {
+    login: (options: {
+      email: string;
+      password: string;
+    }) => string | { token: string; userId: string };
+  };
 }
 
 export interface AppVersionsChannel {
   key: "versions";
-  exposed: AppVersions;
+  exposed: {
+    node: string;
+    browser: string;
+    electron: string;
+  };
 }
-export interface ApiChannel {
-  key: "api";
-  exposed: Api;
-}
-export type ExposedChannel = AppVersionsChannel | ApiChannel;

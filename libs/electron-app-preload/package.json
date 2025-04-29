@@ -1,0 +1,13 @@
+{
+  "name": "@inventorymanager/electron-app-preload",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "devDependencies": {
+    "electron": "^36.0.0"
+  },
+  "sideEffects": false,
+  "volta": {
+    "extends": "../../package.json"
+  }
+}
